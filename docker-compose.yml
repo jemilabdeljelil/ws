@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  mongo1:
+    container_name: mongo1
+    image: mongo:jammy
+    volumes:
+      - ~/mongors/data1:/data/db
+      - ./rs-init.sh:/scripts/rs-init.sh
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: anrpts_houwiyeti_user
+      MONGO_INITDB_ROOT_PASSWORD: hgTR125TFRG265POI
+    networks:
+      - mongors-network
+    ports:
+      - 27021:27017
+    links:
+      - mongo2
+      - mongo3
+    restart: always
+    command: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "dbrs" ,"--auth"]
+   
+  mongo2:
+    container_name: mongo2
+    image: mongo:jammy
+    volumes:
+      - ~/mongors/data2:/data/db
+    networks:
+      - mongors-network
+    ports:
+      - 27022:27017
+    restart: always
+    command: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "dbrs","--auth" ]
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: anrpts_houwiyeti_user
+      MONGO_INITDB_ROOT_PASSWORD: hgTR125TFRG265POI
+  mongo3:
+    container_name: mongo3
+    image: mongo:jammy
+    volumes:
+      - ~/mongors/data3:/data/db
+    networks:
+      - mongors-network
+    ports:
+      - 27023:27017
+    restart: always
+    command: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "dbrs" ,"--auth"]
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: anrpts_houwiyeti_user
+      MONGO_INITDB_ROOT_PASSWORD: hgTR125TFRG265POI
+
+networks:
+  mongors-network:
+    driver: bridge

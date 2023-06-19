@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch SpringSecurityWithJwtApplication",
+            "request": "launch",
+            "mainClass": "mr.anrpts.SpringSecurityWithJwtApplication",
+            "projectName": "ws",
+            "console": "integratedTerminal"
+        }
+    ]
+}

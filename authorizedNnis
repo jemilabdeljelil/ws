@@ -1,0 +1,25 @@
+{
+    "nni": "nni",
+    "authorizedList": [
+        { 
+            "nni": "nni1", "ID": true,  "NP": true,  "VP": true, "RC": true,  "EN": true, "ED": true, "EM": ["Numacte1", "Numacte1" ], "EV": [ "Numacte1", "Numacte1"  ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+{
+"authorizedNnis" : [
+     {
+      "0000000098": ["ID","NP","VP","RC","EN","ED","EV":[],"EM":["numeroActe1","numeroActe2"]
+     }
+    ]
+}

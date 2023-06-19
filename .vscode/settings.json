@@ -1,0 +1,16 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "10.10.100.207",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "dsi",
+            "group": "vlan100",
+            "database": "DSI",
+            "username": "postgres"
+        }
+    ]
+}
